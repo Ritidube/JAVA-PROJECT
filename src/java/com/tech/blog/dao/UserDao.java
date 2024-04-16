@@ -6,14 +6,15 @@
 package com.tech.blog.dao;
 
 import com.tech.blog.entities.User;
+import com.tech.blog.helper.ConnectionProvider;
 import java.sql.*;
 
 public class UserDao {
 
-    private Connection con;
+    private Connection con; // Declaring private Connection variable
 
-    public UserDao(Connection con) {
-        this.con = con;
+    public UserDao(Connection con) {  // Constructor with Connection parameter
+        this.con = con;                 // Assigning the Connection parameter to con
     }
 
     //method to insert user to data base:
@@ -21,21 +22,22 @@ public class UserDao {
         boolean f = false;
         try {
             //user -->database
-
-            String query = "insert into user(name,email,password,gender,about) values (?,?,?,?,?)";
-            PreparedStatement pstmt = this.con.prepareStatement(query);
+            // SQL query to insert user data into the database
+            String query = "INSERT INTO user(name,email,password,gender,about) VALUES (?,?,?,?,?)";
+            PreparedStatement pstmt = this.con.prepareStatement(query);  //Preparing the SQL statement
             pstmt.setString(1, user.getName());
             pstmt.setString(2, user.getEmail());
             pstmt.setString(3, user.getPassword());
             pstmt.setString(4, user.getGender());
             pstmt.setString(5, user.getAbout());
 
-            pstmt.executeUpdate();
+            pstmt.executeUpdate(); // Executing the SQL statemen
             f = true;
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(); // Printing stack trace for debugging
+           // return f;
         }
-        return f;
+        return f; // Returning the boolean value indicating insertion success or failure
 
     }
 
@@ -44,16 +46,16 @@ public class UserDao {
         User user = null;
 
         try {
-
+            // SQL query to retrieve user data based on email and password
             String query = "select * from user where email =? and password=?";
             PreparedStatement pstmt = con.prepareStatement(query);
             pstmt.setString(1, email);
             pstmt.setString(2, password);
 
-            ResultSet set = pstmt.executeQuery();
+            ResultSet set = pstmt.executeQuery();   // Executing the SQL query and getting ResultSet
 
-            if (set.next()) {
-                user = new User();
+            if (set.next()) { // Checking if ResultSet has data
+                user = new User();  // Instantiating User object
 
 //             data from db
                 String name = set.getString("name");
@@ -76,12 +78,12 @@ public class UserDao {
 
         return user;
     }
-
+    // Method to update user data in the database
     public boolean updateUser(User user) {
 
         boolean f = false;
         try {
-
+            // SQL query to update user data in the database
             String query = "update user set name=? , email=? , password=? , gender=? ,about=? , profile=? where  id =?";
             PreparedStatement p = con.prepareStatement(query);
             p.setString(1, user.getName());
@@ -98,16 +100,17 @@ public class UserDao {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return f;
+        return f; // Returning the boolean value indicating update success or failure
     }
-
+    // Method to retrieve user by userId from the database
     public User getUserByUserId(int userId) {
         User user = null;
         try {
+            // SQL query to retrieve user data based on userId
             String q = "select * from user where id=?";
             PreparedStatement ps = this.con.prepareStatement(q);
             ps.setInt(1, userId);
-            ResultSet set = ps.executeQuery();
+            ResultSet set = ps.executeQuery(); // Executing the SQL query and getting ResultSet
             if (set.next()) {
                 user = new User();
 

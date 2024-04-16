@@ -11,6 +11,7 @@
 <%@page  errorPage="error_page.jsp" %>
 
 <%
+    // Checking if the user is logged in. If not, redirect to login page.
 
     User user = (User) session.getAttribute("currentUser");
     if (user == null) {
@@ -19,7 +20,7 @@
 
 
 %>
-
+// Parsing post ID from request parameter and retrieving post details from database
 <%    int postId = Integer.parseInt(request.getParameter("post_id"));
     PostDao d = new PostDao(ConnectionProvider.getConnection());
 
@@ -32,7 +33,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title><%= p.getpTitle()%> || TechBlog by Learn Code with Durgesh </title>
+        <title><%= p.getpTitle()%> || TechBlog </title>
 
         <!--css-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -91,7 +92,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="profile.jsp"> <span class="	fa fa-bell-o"></span> LearnCode with Durgesh <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="profile.jsp"> <span class="	fa fa-bell-o"></span> LearnCode with TechBlog <span class="sr-only">(current)</span></a>
                     </li>
 
                     <li class="nav-item dropdown">

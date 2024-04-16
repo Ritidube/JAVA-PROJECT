@@ -1,6 +1,6 @@
 
 
-<%@page import="com.tech.blog.helper.ConnectionProvider"%>
+<%@page import="com.tech.blog.helper.ConnectionProvider"%>  
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*" %>
 <!DOCTYPE html>
@@ -10,9 +10,9 @@
         <title>JSP Page</title>
 
         <!--css-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">  <!--this line imports Bootstrap CSS file from CDN-->
         <link href="css/mystyle.css" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   <!--This line imports a custom CSS file named "mystyle.css" from the "css" directory.-->
         <style>
             .banner-background{
              clip-path: polygon(30% 0%, 70% 0%, 100% 0, 100% 91%, 63% 100%, 22% 91%, 0 99%, 0 0);
@@ -27,9 +27,9 @@
 
         <!--//banner-->
 
-        <div class="container-fluid p-0 m-0">
+        <div class="container-fluid p-0 m-0"> <!--This line starts a container-fluid with zero padding and margin.-->
 
-            <div class="jumbotron primary-background text-white banner-background">
+            <div class="jumbotron primary-background text-white banner-background"> <!--This line creates a jumbotron with primary background color, white text, and a background image specified by the "banner-background" class.-->
                 <div class="container">
                     <h3 class="display-3">Welcome to TechBlog </h3>
 
@@ -59,9 +59,9 @@
 
         <div class="container">
 
-            <div class="row mb-2">
+            <div class="row mb-2">     <!--This line starts a row with margin bottom.-->
 
-                <div class="col-md-4">
+                <div class="col-md-4">   <!--This line starts a column with medium size for small devices.-->
                     <div class="card" >
 
                         <div class="card-body">
@@ -71,11 +71,12 @@
                         </div>
                     </div>
                 </div>
+                <!--Similar code repeats for other cards-->
                 <div class="col-md-4">
                     <div class="card" >
 
                         <div class="card-body">
-                            <h5 class="card-title">Java Programming</h5>
+                            <h5 class="card-title">Python Programming</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="#" class="btn primary-background text-white">Read more</a>
                         </div>
@@ -85,7 +86,7 @@
                     <div class="card" >
 
                         <div class="card-body">
-                            <h5 class="card-title">Java Programming</h5>
+                            <h5 class="card-title">C++ Programming</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="#" class="btn primary-background text-white">Read more</a>
                         </div>
@@ -104,7 +105,7 @@
                     <div class="card" >
 
                         <div class="card-body">
-                            <h5 class="card-title">Java Programming</h5>
+                            <h5 class="card-title">Data structures and Algorithms</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="#" class="btn primary-background text-white">Read more</a>
                         </div>
@@ -114,7 +115,7 @@
                     <div class="card" >
 
                         <div class="card-body">
-                            <h5 class="card-title">Java Programming</h5>
+                            <h5 class="card-title">Web Development</h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="#" class="btn primary-background text-white">Read more</a>
                         </div>
@@ -124,7 +125,7 @@
                     <div class="card" >
 
                         <div class="card-body">
-                            <h5 class="card-title">Java Programming</h5>
+                            <h5 class="card-title">Database-MySql </h5>
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                             <a href="#" class="btn primary-background text-white">Read more</a>
                         </div>
@@ -142,10 +143,10 @@
         <script
             src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> <!--This line imports the jQuery library from a CDN.-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="js/myjs.js" type="text/javascript"></script>
+        <script src="js/myjs.js" type="text/javascript"></script> <!--This line imports a custom JavaScript file named "myjs.js" from the "js" directory.-->
 
     </body>
 </html>

@@ -1,5 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page isErrorPage="true" %>
+<%@page isErrorPage="true" %>  <!-- Marking this page as an error page -->
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,10 +19,10 @@
     </head>
     <body>
         <div class="container text-center">
-            <img src="img/error.png" class="img-fluid" >
-            <h3 class="display-3">Sorry ! Something went wrong ...</h3>
+            <img src="img/error.png" class="img-fluid" > <!-- Error image -->
+            <h3 class="display-3">Sorry ! Something went wrong ...</h3> <!-- Error message -->
             <%= exception%>
-            <a href="index.jsp" class="btn primary-background btn-lg text-white mt-3">Home </a>
+            <a href="index.jsp" class="btn primary-background btn-lg text-white mt-3">Home </a> <!-- Link to homepage -->
         </div>
 
 

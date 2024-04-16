@@ -15,7 +15,7 @@ public class ConnectionProvider {
 
                 //create a connection..
                 con = DriverManager.
-                        getConnection("jdbc:mysql://localhost:3306/techblog", "root", "root");
+                        getConnection("jdbc:mysql://localhost:3306/techblog", "root", "12345");
 
             }
 

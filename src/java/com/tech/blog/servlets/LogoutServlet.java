@@ -14,10 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author Durgesh
- */
+
 public class LogoutServlet extends HttpServlet {
 
     /**
@@ -41,15 +38,15 @@ public class LogoutServlet extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
 
-            HttpSession s = request.getSession();
+            HttpSession s = request.getSession(); // Getting the session associated with the request
 
             s.removeAttribute("currentUser");
 
-            Message m = new Message("Logout Successfully", "success", "alert-success");
+            Message m = new Message("Logout Successfully", "success", "alert-success"); //// Creating a success message object
 
             s.setAttribute("msg", m);
 
-            response.sendRedirect("login_page.jsp");
+            response.sendRedirect("login_page.jsp");  // Redirecting the user to the login page
 
             out.println("</body>");
             out.println("</html>");

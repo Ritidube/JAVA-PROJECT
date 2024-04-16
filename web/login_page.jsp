@@ -1,5 +1,5 @@
 
-<%@page import="com.tech.blog.entities.Message"%>
+<%@page import="com.tech.blog.entities.Message"%> <!-- Importing the Message class -->
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -29,35 +29,35 @@
                 <div class="row">
                     <div class="col-md-4 offset-md-4">
 
-                        <div class="card">
+                        <div class="card"> <!-- Bootstrap card for login form -->
                             <div class="card-header primary-background text-white text-center">
                                 <span class="fa fa-user-plus fa-3x"></span>
                                 <br>
                                 <p>Login here</p>
                             </div>
-
+                             <!-- Alert Message Section --> 
                             <%
-                                Message m = (Message) session.getAttribute("msg");
+                                Message m = (Message) session.getAttribute("msg"); //<!-- Getting message from session -->
                                 if (m != null) {
                             %>
-                            <div class="alert <%= m.getCssClass() %>" role="alert">
-                                <%= m.getContent() %>
+                            <div class="alert <%= m.getCssClass() %>" role="alert"> <!-- Alert message with dynamic CSS class -->
+                                <%= m.getContent() %> <!-- Displaying message content -->
                             </div> 
 
 
                             <%        
-                                    session.removeAttribute("msg");
+                                    session.removeAttribute("msg"); //after referesh message will remove
                                 }
 
                             %>
 
 
-
+                            <!-- Login Form Section -->
                             <div class="card-body">
                                 <form action="LoginServlet" method="post">
                                     <div class="form-group">
-                                        <label for="exampleInputEmail1">Email address</label>
-                                        <input name="email" required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                        <label for="exampleInputEmail1">Email address</label> //<!-- Label for email input -->
+                                        <input name="email" required type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"> <!-- Email input field -->
                                         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                                     </div>
                                     <div class="form-group">
@@ -100,3 +100,4 @@
 
     </body>
 </html>
+<!--The code is for a login webpage. It imports some necessary things, sets up the layout, and styles the page using Bootstrap and custom CSS. It includes a navigation bar and a login form where users can enter their email and password. If there are any error messages, like incorrect login details, they'll be shown on the page. Finally, it includes some JavaScript for additional functionality. >

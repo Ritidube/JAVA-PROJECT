@@ -134,6 +134,7 @@
 
                             if (data.trim() === 'done')
                             {
+                                // Redirect to login page after successful registration
 
                                 swal("Registered successfully..We are going to redirect to login page")
                                         .then((value) => {
@@ -147,9 +148,9 @@
 
                         },
                         error: function (jqXHR, textStatus, errorThrown) {
-                            $("#sumbimt-btn").show();
+                            $("#sumbimt-btn").show(); // Shows the submit button again
                             $("#loader").hide();
-                            swal("something went wrong..try again");
+                            swal("something went wrong..try again"); //// Displays a sweet alert with an error message
 
                         },
                         processData: false,

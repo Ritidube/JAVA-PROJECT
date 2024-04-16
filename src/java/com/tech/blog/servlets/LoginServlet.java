@@ -17,10 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- *
- * @author Durgesh
- */
+
 public class LoginServlet extends HttpServlet {
 
     /**
@@ -35,7 +32,7 @@ public class LoginServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
+        try (PrintWriter out = response.getWriter()) { // Using try-with-resources to handle PrintWriter
             /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
@@ -48,25 +45,25 @@ public class LoginServlet extends HttpServlet {
             String userEmail = request.getParameter("email");
             String userPassword = request.getParameter("password");
 
-            UserDao dao = new UserDao(ConnectionProvider.getConnection());
+            UserDao dao = new UserDao(ConnectionProvider.getConnection()); // Creating UserDao object using ConnectionProvider class
 
-            User u = dao.getUserByEmailAndPassword(userEmail, userPassword);
+            User u = dao.getUserByEmailAndPassword(userEmail, userPassword); // Retrieving user from database based on email and password
 
             if (u == null) {
                 //login.................
 //                error///
 //                out.println("Invalid Details..try again");
-                Message msg = new Message("Invalid Details ! try with another", "error", "alert-danger");
-                HttpSession s = request.getSession();
-                s.setAttribute("msg", msg);
+                Message msg = new Message("Invalid Details ! try with another", "error", "alert-danger"); //message blog entites (message.java)
+                HttpSession s = request.getSession(); // Retrieving session object
+                s.setAttribute("msg", msg); // Setting error message in session attribute
 
-                response.sendRedirect("login_page.jsp");
+                response.sendRedirect("login_page.jsp"); // Redirecting to login page
             } else {
                 //......
 //                login success
                 HttpSession s = request.getSession();
-                s.setAttribute("currentUser", u);
-                response.sendRedirect("profile.jsp");
+                s.setAttribute("currentUser", u); // Setting current user in session attribute
+                response.sendRedirect("profile.jsp"); // Redirecting to profile page
 
             }
 
@@ -115,3 +112,5 @@ public class LoginServlet extends HttpServlet {
     }// </editor-fold>
 
 }
+
+//Overall, this servlet handles user login functionality by interacting with the UserDao class to authenticate users and manage sessions. If the login is successful, the user is redirected to the profile page; otherwise, an error message is displayed on the login page.
