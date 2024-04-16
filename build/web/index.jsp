@@ -22,7 +22,7 @@
     </head>
     <body>
 
-        <!--navbar-->
+        <!--navbar from bootstrap-->
         <%@include file="normal_navbar.jsp" %>
 
         <!--//banner-->
@@ -66,7 +66,7 @@
 
                         <div class="card-body">
                             <h5 class="card-title">Java Programming</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text">Java programming is a high-level, object-oriented language known for its platform independence and wide usage in web, mobile, and enterprise applications.</p>
                             <a href="#" class="btn primary-background text-white">Read more</a>
                         </div>
                     </div>
@@ -77,7 +77,7 @@
 
                         <div class="card-body">
                             <h5 class="card-title">Python Programming</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text">Python programming is a versatile, high-level language renowned for its simplicity, readability, and extensive libraries, widely used in fields such as web development, data science, and artificial intelligence.</p>
                             <a href="#" class="btn primary-background text-white">Read more</a>
                         </div>
                     </div>
@@ -87,7 +87,7 @@
 
                         <div class="card-body">
                             <h5 class="card-title">C++ Programming</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text">C++ programming is a powerful, object-oriented language known for its performance, flexibility, and extensive use in system software, game development, and embedded systems.</p>
                             <a href="#" class="btn primary-background text-white">Read more</a>
                         </div>
                     </div>
@@ -106,7 +106,7 @@
 
                         <div class="card-body">
                             <h5 class="card-title">Data structures and Algorithms</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text"> DSA form the backbone of computer science, providing efficient methods for organizing and manipulating data, and solving complex computational problems, essential for developing optimized and scalable software solutions.</p>
                             <a href="#" class="btn primary-background text-white">Read more</a>
                         </div>
                     </div>
@@ -116,7 +116,7 @@
 
                         <div class="card-body">
                             <h5 class="card-title">Web Development</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text">Web development creates websites and applications using HTML, CSS, JavaScript, and frameworks like React and Angular, enabling dynamic online experiences.</p>
                             <a href="#" class="btn primary-background text-white">Read more</a>
                         </div>
                     </div>
@@ -126,7 +126,7 @@
 
                         <div class="card-body">
                             <h5 class="card-title">Database-MySql </h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text">MySQL is a widely-used relational database management system (RDBMS) known for its scalability, reliability, and ease of use in storing and managing structured data.</p>
                             <a href="#" class="btn primary-background text-white">Read more</a>
                         </div>
                     </div>

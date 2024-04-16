@@ -12,7 +12,7 @@ public class Post {
     private Timestamp pDate;
     private int catId;
     private int userId;
-
+    // default constructor
     public Post() {
     }
 
@@ -36,7 +36,7 @@ public class Post {
         this.catId = catId;
         this.userId = userId;
     }
-
+    //getters and setters
     public int getPid() {
         return pid;
     }

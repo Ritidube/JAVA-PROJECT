@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.tech.blog.servlets;
 
 import com.tech.blog.dao.UserDao;
@@ -21,10 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
-/**
- *
- * @author Durgesh
- */
+
 @MultipartConfig
 public class EditServlet extends HttpServlet {
 

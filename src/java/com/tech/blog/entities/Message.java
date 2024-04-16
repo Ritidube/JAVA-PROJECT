@@ -13,8 +13,8 @@ public class Message {
     }
 
 //    getters and setters
-    public String getContent() { // Getter method for retrieving the content
-        return content;          // Returning the content
+    public String getContent() { 
+        return content;          
     }
 
     public void setContent(String content) {
@@ -40,8 +40,3 @@ public class Message {
 }
 
 
-//This class has three private instance variables: content, type, and cssClass, representing the content of the message, the type of message (e.g., success, error), and the CSS class to be applied for styling the message, respectively.
-
-//The class includes a constructor to initialize these variables, along with getter and setter methods for accessing and modifying the values of these variables.
-
-//Overall, this class encapsulates the properties and behavior of a message entity, providing a convenient way to work with messages within a Java application.

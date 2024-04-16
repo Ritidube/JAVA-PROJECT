@@ -5,7 +5,7 @@ import java.sql.*;
 public class ConnectionProvider {
 
     private static Connection con;
-
+    // Method to get database connection
     public static Connection getConnection() {
         try {
 

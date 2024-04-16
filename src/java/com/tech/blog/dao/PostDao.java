@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.tech.blog.dao;
 
 import com.tech.blog.entities.Category;
@@ -18,7 +14,7 @@ public class PostDao {
     public PostDao(Connection con) {
         this.con = con;
     }
-
+    // Method to fetch all categories
     public ArrayList<Category> getAllCategories() {
         ArrayList<Category> list = new ArrayList<>();
 
@@ -27,6 +23,7 @@ public class PostDao {
             String q = "select * from categories";
             Statement st = this.con.createStatement();
             ResultSet set = st.executeQuery(q);
+            // Iterate over the result set and create Category objects
             while (set.next()) {
                 int cid = set.getInt("cid");
                 String name = set.getString("name");
@@ -41,13 +38,14 @@ public class PostDao {
 
         return list;
     }
-
+    // Method to save a post
     public boolean savePost(Post p) {
         boolean f = false;
         try {
 
             String q = "insert into posts(pTitle,pContent,pCode,pPic,catId,userId) values(?,?,?,?,?,?)";
             PreparedStatement pstmt = con.prepareStatement(q);
+            // Set values for parameters in the prepared statement
             pstmt.setString(1, p.getpTitle());
             pstmt.setString(2, p.getpContent());
             pstmt.setString(3, p.getpCode());
@@ -126,7 +124,7 @@ public class PostDao {
         }
         return list;
     }
-
+     // Method to fetch a post by post id
     public Post getPostByPostId(int postId) {
         Post post = null;
         String q = "select * from posts where pid=?";

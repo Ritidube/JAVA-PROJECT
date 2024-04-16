@@ -1,17 +1,17 @@
 
 package com.tech.blog.entities;
-
+// Category entity class representing a category of blog posts
 public class Category {
     private int cid;
     private String name;
     private String description;
-
+     // Parameterized constructor to initialize category with ID, name, and description
     public Category(int cid, String name, String description) {
         this.cid = cid;
         this.name = name;
         this.description = description;
     }
-
+    // Default constructor
     public Category() {
     }
 
@@ -19,7 +19,7 @@ public class Category {
         this.name = name;
         this.description = description;
     }
-
+    // getters and setters
     public int getCid() {
         return cid;
     }

@@ -36,7 +36,8 @@
                         </div>
                         <div class="card-body">
                             <form id="reg-form" action="RegisterServlet" method="POST">
-
+                                
+                                <!-- Input fields for user registration -->
                                 <div class="form-group">
                                     <label for="user_name">User Name</label>
                                     <input name="user_name" type="text" class="form-control" id="user_name" aria-describedby="emailHelp" placeholder="Enter name">
@@ -76,7 +77,7 @@
                                 </div>
 
                                 <br>
-
+                                <!-- Loader display -->
                                 <div class="container text-center" id="loader" style="display: none;">
                                     <span class="fa fa-refresh fa-spin fa-4x"></span>
                                     <h4>Please wait..</h4>

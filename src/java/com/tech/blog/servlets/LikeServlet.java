@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.tech.blog.servlets;
 
 import com.tech.blog.dao.LikeDao;
@@ -14,10 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Durgesh
- */
+
 public class LikeServlet extends HttpServlet {
 
     /**
@@ -29,11 +22,12 @@ public class LikeServlet extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    // Method to process both GET and POST requests
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+            // Retrieve parameters from the request
             String operation = request.getParameter("operation");
             int uid = Integer.parseInt(request.getParameter("uid"));
             int pid = Integer.parseInt(request.getParameter("pid"));
@@ -42,6 +36,7 @@ public class LikeServlet extends HttpServlet {
 //            out.println(operation);
 //            out.println(uid);
 //            out.println(pid);
+            // Create a LikeDao instance with a connection from ConnectionProvider
             LikeDao ldao = new LikeDao(ConnectionProvider.getConnection());
             if (operation.equals("like")) {
                 boolean f=ldao.insertLike(pid, uid);
